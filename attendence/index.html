@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKAUT ATTENDANCE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud"></i>MAKAUT ATTENDANCE</h1>
+            <nav>
+                <button class="active" data-view="attendance">Take Attendance</button>
+                <button data-view="records">View Records</button>
+            </nav>
+        </header>
+
+        <main>
+            
+            <section id="attendance-view" class="view active">
+                <div class="event-details">
+                    <input type="text" id="event-name" placeholder="Event Name" class="input-field">
+                    <input type="datetime-local" id="event-datetime" class="input-field">
+                </div>
+
+                <div class="attendee-form">
+                    <input type="text" id="attendee-name" placeholder="Attendee Name" class="input-field">
+                    <input type="email" id="attendee-email" placeholder="Attendee Email" class="input-field">
+                    <button id="add-attendee" class="btn-primary">
+                        <i class="fas fa-plus"></i> Add Attendee
+                    </button>
+                </div>
+
+                <div class="attendees-list">
+                    <h2>Current Attendees</h2>
+                    <div id="attendees-container"></div>
+                </div>
+
+                <button id="save-attendance" class="btn-success">
+                    <i class="fas fa-save"></i> Save Attendance
+                </button>
+            </section>
+
+         
+            <section id="records-view" class="view">
+                <div class="records-filter">
+                    <input type="text" id="search-records" placeholder="Search events..." class="input-field">
+                    <select id="filter-date" class="input-field">
+                        <option value="all">All Dates</option>
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                    </select>
+                </div>
+                <div id="records-container"></div>
+            </section>
+        </main>
+
+        <div id="notification" class="notification"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
